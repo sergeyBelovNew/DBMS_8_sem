@@ -1,3 +1,10 @@
---10. Найти максимальную цену товара (ListPrice) из таблицы Production.Product.
-SELECT MAX("ListPrice") AS MaxPrice
-FROM "Production"."Product";
+--10. Заменить на NULL значение в поле цвет (Color), если цвет товара красный (red). 
+--Показать поля ProductID, Name, Color из таблицы Production.Product, если цвет товара определен (поле не пустое).
+
+UPDATE "Production"."Product"
+SET "Color" = NULL
+WHERE "Color" = 'red';
+
+SELECT "ProductID", "Name", "Color"
+FROM "Production"."Product"
+WHERE "Color" IS NOT NULL;

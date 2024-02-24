@@ -1,3 +1,4 @@
---5. Показать cтандартный код ISO для стран и регионов (CountryRegionCode) и название страны или региона (Name), имеющие
--- отношение к Конго (Congo) из таблицы Person.CountryRegion.
-SELECT "CountryRegionCode", "Name" FROM "Person"."CountryRegion" WHERE "Name" LIKE '%Congo%';
+--4. Показать поля PurchaseOrderID, RevisionNumber, Status, ShipDate из таблицы Purchasing.PurchaseOrderHeader, для 
+--которых известна ориентировочная дата отгрузки от поставщика (ShipDate) и текущее состояние заказа (Status) "Ожидание" (= 1).
+SELECT "PurchaseOrderID", "RevisionNumber", "Status", "ShipDate" FROM "Purchasing"."PurchaseOrderHeader"
+WHERE "ShipDate" IS NOT NULL AND "Status" = 1;
