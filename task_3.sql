@@ -2,8 +2,7 @@
 --пустые значения
 
 SELECT 
-    AVG(CASE WHEN "Gender" = 'M' THEN age("BirthDate", timestamp '2024-02-17') END) AS AverageAgeMen,
-    AVG(CASE WHEN "Gender" = 'F' THEN age("BirthDate", timestamp '2024-02-17') END) AS AverageAgeWomen
+    AVG(age("BirthDate", timestamp '2024-02-17')) AS AverageAge
 FROM "HumanResources"."Employee"
-WHERE "BirthDate" IS NOT NULL
-
+WHERE "BirthDate" IS NOT null 
+group by "Gender";
