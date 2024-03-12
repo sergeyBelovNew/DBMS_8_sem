@@ -4,6 +4,7 @@
 SELECT
     DISTINCT "ProductLine",
     "Color",
-    MAX("Size") AS MAX_SIZE
+    MAX("Size") AS MAX_SIZE,
+    GROUPING ("Size")
 FROM "Production"."Product"
 GROUP BY CUBE ("ProductLine", "Color", "Size");
