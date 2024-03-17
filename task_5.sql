@@ -5,7 +5,11 @@ SELECT
     COUNT(P1."ProductSubcategoryID") AS NumberOfProductSubcategories
 FROM 
     "Production"."Product" AS P1
+<<<<<<< Updated upstream
 JOIN 
+=======
+INNER JOIN 
+>>>>>>> Stashed changes
     "Production"."Product" AS P2 ON P1."StandardCost" = P2."StandardCost"
 WHERE 
     P1."ProductSubcategoryID" <> P2."ProductSubcategoryID"

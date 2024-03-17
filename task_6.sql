@@ -5,7 +5,11 @@ SELECT
     COUNT(S1."MinQty") AS NumberOfMinQtys
 FROM 
     "Sales"."SpecialOffer" AS S1
+<<<<<<< Updated upstream
 JOIN 
+=======
+INNER JOIN 
+>>>>>>> Stashed changes
     "Sales"."SpecialOffer" AS S2 ON S1."Type" = S2."Type"
 WHERE 
     S1."MinQty" >= 15 AND S1."MinQty" <> S2."MinQty"
